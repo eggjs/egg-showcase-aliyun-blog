@@ -1,0 +1,22 @@
+.btn-ghost {
+    background-color: transparent;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    color: #DDDDDD;
+}
+
+.btn-ghost:hover {
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.manager .btn{
+    color: #fff;
+    border-radius: 2px;
+    width: 50px;
+    padding: 0;
+}
+
+.manager .btn:hover {
+    color: #fff;
+}

@@ -1,0 +1,75 @@
+{% extends "_layout.html" %}
+
+{% block header %}
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('public/images/contact-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="page-heading">
+                    <h1>Install</h1>
+                    <hr class="small">
+                    <span class="subheading">Install this blog</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block body %}
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {% if isInstall %}
+            <div>This site was installed !</div>
+            {% else %}
+            <form name="install" id="installForm" action="/install" method="post">
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Site Name</label>
+                        <input type="text" class="form-control" placeholder="Site Name *" name="name" id="name" required data-validation-required-message="Please enter your Site Name.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" placeholder="Email Address *" name="email" id="email" required data-validation-required-message="Please enter your email address.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Password</label>
+                        <input type="password" class="form-control" placeholder="Password *" name="password" id="password" required data-validation-required-message="Please enter your paggword.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>About Me</label>
+                        <textarea class="form-control" name="about" placeholder="About Me" id="about"></textarea>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Sub Name</label>
+                        <input type="text" class="form-control" name="sub_name" placeholder="Sub Name" id="sub_name">
+                    </div>
+                </div>
+                <br>
+                <div id="success"></div>
+                <div class="row">
+                    <div class="form-group col-xs-12">
+                        <button type="submit" class="btn btn-default">Install</button>
+                    </div>
+                </div>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

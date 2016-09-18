@@ -1,0 +1,7 @@
+{% if count > pageSize * pageNum  %}
+<ul class="pager">
+    <li class="next">
+        <a href="/?pageNum={{pageNum+1}}&pageSize={{pageSize}}">Older Posts &rarr;</a>
+    </li>
+</ul>
+{% endif %}

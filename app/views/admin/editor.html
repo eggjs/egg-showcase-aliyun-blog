@@ -1,0 +1,58 @@
+{% extends "_layout.html" %}
+{% block style %}
+    <link href="/public/css/editormd.min.css" rel="stylesheet">
+{% endblock %}
+{% block header %}
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('public/images/contact-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="page-heading">
+                    <h1>Published an article</h1>
+                    <hr class="small">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row article-form">
+        <form action="/article" method="post">
+            {% if article.id %}
+            <input type="hidden" name="id" value="{{article.id}}">
+            <input type="hidden" name="id" value="PUT">
+            {% endif %}
+            <div class="row control-group" style="margin: 0 60px;" >
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>Title</label>
+                    <input value="{{article.title}}" type="text" class="form-control" placeholder="Title" id="title" name="title" required data-validation-required-message="Please enter article title.">
+                    <p class="help-block text-danger"></p>
+                </div>
+            </div>
+            <div class="row control-group" style="margin: 0 60px 60px;" >
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>Sub-Title</label>
+                    <input value="{{article.sub_title}}" type="text" class="form-control" placeholder="Sub-Title" id="sub_title" name="sub_title">
+                    <p class="help-block text-danger"></p>
+                </div>
+            </div>
+            <div class="editormd" id="article-editormd">
+                <textarea name="content">{{'### Hello world!' if isNew else article.content}}</textarea>
+            </div>
+            <br/><input id="article-submit" type="submit" name="submit" value="Submit" class="btn" style="margin-left: 5%;" />
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block page %}{% include "component/pager.html" %}{% endblock %}
+
+{% block script %}
+<script src="/public/js/lib/editormd.js"></script>
+<script src="/public/js/editor.js"></script>
+{% endblock %}
