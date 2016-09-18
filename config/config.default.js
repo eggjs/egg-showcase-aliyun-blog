@@ -34,6 +34,8 @@ exports.userrole = {
         this.status = 403;
         this.redirect('/login');
         break;
+      default:
+        break;
     }
   },
 };

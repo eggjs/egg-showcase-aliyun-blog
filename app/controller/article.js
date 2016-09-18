@@ -64,9 +64,7 @@ exports.deleteArticle = function* () {
 
 exports.upload = function* () {
   const stream = yield this.getFileStream();
-  let object;
-
-  object = yield this.oss.put(moment(Date.now()).format('YYYY-MM-DD') + '/' + stream.filename, stream);
+  const object = yield this.oss.put(moment(Date.now()).format('YYYY-MM-DD') + '/' + stream.filename, stream);
   if (object) {
     this.body = {
       success: 1,           // 0 表示上传失败，1 表示上传成功

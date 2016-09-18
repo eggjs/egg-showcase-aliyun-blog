@@ -2,7 +2,7 @@
 
 const should = require('should');
 const request = require('supertest');
-const mm = require('@ali/mm');
+const mm = require('egg-mock');
 const utility = require('utility');
 const crypto = require('crypto');
 

@@ -4,19 +4,15 @@ const crypto = require('crypto');
 
 module.exports = app => {
   class MonthServer extends app.Service {
-    constructor(ctx) {
-      super(ctx);
-    }
-
     * insert(name, email, password, about, sub_name) {
-      const md5Password = crypto.createHash('md5').update(password).digest('hex');
+      // const md5Password = crypto.createHash('md5').update(password).digest('hex');
 
       const result = yield app.mysql.insert('site', {
-        name: name,
-        email: email,
-        password: md5Password,
-        about: about,
-        sub_name: sub_name,
+        name,
+        email,
+        password,
+        about,
+        sub_name,
       });
 
       return result.affectedRows === 1;
@@ -38,7 +34,7 @@ module.exports = app => {
 
       const user = yield app.mysql.select('site', {
         where: {
-          email: email,
+          email,
           password: md5Password,
         },
       });

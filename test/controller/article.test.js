@@ -2,7 +2,7 @@
 
 const should = require('should');
 const request = require('supertest');
-const mm = require('@ali/mm');
+const mm = require('egg-mock');
 const utility = require('utility');
 const urllib = require('urllib');
 const pedding = require('pedding');
@@ -21,7 +21,7 @@ describe('test/article.test.js', function() {
 
     yield app.ready();
 
-    let tempArticle = yield app.mysql.insert('article', {
+    const tempArticle = yield app.mysql.insert('article', {
       title: tempTitle,
       sub_title: tempSubTitle,
       content: tempContent,
