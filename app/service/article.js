@@ -2,7 +2,6 @@
 
 module.exports = app => {
   class MonthServer extends app.Service {
-
     * insert(title, content, subTitle) {
       const result = yield app.mysql.insert('article', {
         title,

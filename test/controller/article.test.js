@@ -4,7 +4,6 @@ const should = require('should');
 const request = require('supertest');
 const mm = require('egg-mock');
 const utility = require('utility');
-const urllib = require('urllib');
 const pedding = require('pedding');
 
 describe('test/article.test.js', function() {
@@ -81,11 +80,7 @@ describe('test/article.test.js', function() {
       .expect(res => {
         const url = res.body.url;
         url.should.be.a.String;
-        // oss url 能够被访问到
-        urllib.request(url, function(err, _, res) {
-          res.status.should.equal(200);
-          done(err);
-        });
+        done();
       })
       .expect(200, done);
   });
