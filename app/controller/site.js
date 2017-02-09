@@ -84,7 +84,7 @@ exports.notFound = function* () {
 };
 
 exports.install = function* () {
-  this.validate(installRule);
+  // this.validate(installRule);
 
   const name = this.request.body.name;
   const email = this.request.body.email;

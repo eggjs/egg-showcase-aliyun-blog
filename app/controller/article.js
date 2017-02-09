@@ -16,6 +16,7 @@ exports.index = function* () {
   yield this.render('index.html', Object.assign({
     pageNum,
     pageSize,
+    login: this.session.login,
   }, result));
 
 };

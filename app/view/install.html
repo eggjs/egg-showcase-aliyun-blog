@@ -37,7 +37,7 @@
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <label>Email Address</label>
-                        <input type="email" class="form-control" placeholder="Email Address *" name="email" id="email" required data-validation-required-message="Please enter your email address.">
+                        <input type="email" class="form-control" placeholder="Email Address *" name="email" id="email" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" required data-validation-required-message="Please enter your email address.">
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
