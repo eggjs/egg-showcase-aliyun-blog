@@ -39,10 +39,10 @@ please use the latest version of following tools:
 
 Through this showcase, you can learn a few points:
 
-1.How to use [aliyun-egg](https://github.com/eggjs/aliyun-egg) to write an MVC website
-1.How to use [egg-mysql](https://github.com/eggjs/egg-mysql) to  operate database (insert, find, delete, edit).
-1.How to use [nunjucks](https://github.com/mozilla/nunjucks) to write a template for `view`.
-1.How to use [egg-oss](https://github.com/eggjs/egg-oss) to upload your file.
+1. How to use [aliyun-egg](https://github.com/eggjs/aliyun-egg) to write an MVC website
+1. How to use [egg-mysql](https://github.com/eggjs/egg-mysql) to  operate database (insert, find, delete, edit).
+1. How to use [nunjucks](https://github.com/mozilla/nunjucks) to write a template for `view`.
+1. How to use [egg-oss](https://github.com/eggjs/egg-oss) to upload your file.
 
 ## features
 
