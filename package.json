@@ -40,8 +40,8 @@
     "utility": "^1.8.0"
   },
   "engines": {
-    "node": "4.2.3",
-    "install-node": "4.2.3"
+    "node": "6.1.0",
+    "install-node": "6.1.0"
   },
   "author": "xinglong.wangwxl",
   "license": "MIT"
