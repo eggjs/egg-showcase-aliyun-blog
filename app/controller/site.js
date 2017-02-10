@@ -82,7 +82,7 @@ exports.install = function* () {
   } catch (e) {
     yield this.render('install.html', {
       isInstall,
-      errors: e.errors
+      errors: e.errors,
     });
     return;
   }
