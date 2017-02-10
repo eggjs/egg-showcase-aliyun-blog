@@ -26,6 +26,11 @@
             {% if isInstall %}
             <div>This site was installed !</div>
             {% else %}
+            {% if errors %}
+                {% for error in errors %}
+                <div style="color: red;"><i>{{error.field}}</i> {{ error.message }}</div>
+                {% endfor %}
+            {% endif %}
             <form name="install" id="installForm" action="/install" method="post">
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">

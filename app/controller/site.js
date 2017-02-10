@@ -12,14 +12,6 @@ const installRule = {
   password: {
     type: 'password',
   },
-  about: {
-    required: false,
-    type: 'string',
-  },
-  sub_name: {
-    required: false,
-    type: 'string',
-  },
 };
 
 exports.contact = function* () {
@@ -84,7 +76,16 @@ exports.notFound = function* () {
 };
 
 exports.install = function* () {
-  // this.validate(installRule);
+
+  try {
+    this.validate(installRule);
+  } catch (e) {
+    yield this.render('install.html', {
+      isInstall,
+      errors: e.errors
+    });
+    return;
+  }
 
   const name = this.request.body.name;
   const email = this.request.body.email;
