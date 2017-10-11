@@ -10,7 +10,9 @@
     "test": "npm run lint && npm run test-local",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",
-    "ci": "npm run lint && npm run cov"
+    "ci": "npm run lint && npm run cov",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -24,7 +26,8 @@
     "aliyun-egg": "^1.0.0",
     "crypto": "0.0.3",
     "marked": "^0.3.5",
-    "moment": "^2.13.0"
+    "moment": "^2.13.0",
+    "snyk": "^1.42.6"
   },
   "devDependencies": {
     "egg": "~0.1.0",
@@ -44,5 +47,6 @@
     "install-node": "4.2.3"
   },
   "author": "xinglong.wangwxl",
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
